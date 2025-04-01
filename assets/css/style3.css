@@ -1,0 +1,260 @@
+/* Reset dei margini e dei padding per tutti gli elementi */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corpo principale del sito */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #E0F2E9;
+    color: #333;
+    padding: 20px;
+    padding-top:0px;
+}
+
+/* Navbar */
+.navbar {
+    margin-top:0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Distribuisce i contenuti a sinistra e destra */
+    background-color: #000; /* Imposta il colore di sfondo della navbar su nero */
+    padding: 10px 20px;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff; /* Imposta il colore del testo a bianco */
+    text-decoration: none;
+}
+
+.navbar-nav {
+    display: flex;
+    gap: 15px;
+    margin-left: auto; /* Allinea i link a destra */
+}
+
+.nav-link {
+    color: white; /* Colore del testo dei link in bianco */
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.nav-link:hover {
+    color: #ffeb3b; /* Colore del testo al passaggio del mouse */
+    text-decoration: underline;
+}
+
+
+/* Sezione principale */
+main {
+    margin-top: 20px;
+}
+
+/* Stile per le sezioni */
+section {
+    background-color: #fff;
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    font-size: 2em;
+    color: #004d40;
+    margin-bottom: 10px;
+}
+
+h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+h4 {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+    color: #666;
+}
+
+p {
+    font-size: 1em;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+ul {
+    margin-left: 20px;
+}
+
+ul li {
+    margin-bottom: 8px;
+}
+
+/* Link */
+a {
+    color: #00796b;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Immagini */
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 20px 0;
+}
+
+/* Layout delle pagine */
+section img {
+    max-width: 800px;
+}
+
+/* Barra di navigazione (Navbar) */
+nav {
+    background-color: #004d40;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    font-size: 1.1em;
+    font-weight: 600;
+}
+
+nav ul li a:hover {
+    color: #ffeb3b;
+}
+
+/* Footer */
+footer {
+    background-color: #004d40;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    font-size: 1em;
+}
+
+/* Stile per i dispositivi mobili */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    header h1 {
+        font-size: 2em;
+    }
+
+    section {
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+
+    h3 {
+        font-size: 1.4em;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    footer p {
+        font-size: 0.9em;
+    }
+}
+
+/* Aggiungi stili per la barra laterale (se usata) */
+.sidebar {
+    background-color: #004d40;
+    color: #fff;
+    padding: 15px;
+    width: 250px;
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar a {
+    color: #fff;
+    display: block;
+    padding: 8px 0;
+    text-decoration: none;
+}
+
+.sidebar a:hover {
+    color: #ffeb3b;
+}
+
+/* Stile per i bottoni */
+button {
+    background-color: #00796b;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #004d40;
+}
+
+/* Styling per il modulo */
+form input, form textarea, form button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+form textarea {
+    resize: vertical;
+}
+
+form button {
+    background-color: #004d40;
+    color: #fff;
+    font-weight: bold;
+}
+
+form button:hover {
+    background-color: #00796b;
+}
