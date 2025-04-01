@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contattaci - Paul Gauguin</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> <!-- Bootstrap CDN -->
+  <link rel="stylesheet" href="assets/css/style.css"> 
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    function showConfirmation(event) {
+      event.preventDefault(); // Previene il comportamento di invio del modulo
+
+      // Ottieni i valori del modulo
+      var name = document.getElementById('name').value;
+      var email = document.getElementById('email').value;
+      var message = document.getElementById('message').value;
+
+      // Mostra una finestra di conferma con i dati del modulo
+      alert('Grazie per averci contattato, ' + name + '! Abbiamo ricevuto il tuo messaggio e ti risponderemo al più presto.');
+      
+      // Pulisci il modulo
+      document.getElementById('contactForm').reset();
+    }
+  </script>
+</head>
+<body>
+
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark custom-header">
+      <a class="navbar-brand" href="index.html">Homepage</a>
+      <div class="navbar-nav">
+        <a class="nav-link" href="catalog.html">Catalogo Opere</a>
+        <a class="nav-link" href="webproject.html">Progetto Web</a>
+        <a class="nav-link" href="contact.html">Contattaci</a>
+      </div>
+    </nav>
+  </header>
+
+  <div class="container mt-5">
+    <section class="contact-form">
+      <h1 class="text-center mb-4">Contattaci</h1>
+      <p class="text-center mb-5">Se hai domande o desideri più informazioni, inviaci un messaggio. Saremo felici di risponderti!</p>
+
+      <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+          <form id="contactForm" onsubmit="showConfirmation(event)" class="p-4 border rounded shadow-sm bg-light">
+            <!-- Nome -->
+            <div class="form-group">
+              <label for="name">Nome</label>
+              <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+
+            <!-- Email -->
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+
+            <!-- Messaggio -->
+            <div class="form-group">
+              <label for="message">Messaggio</label>
+              <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+            </div>
+
+            <!-- Pulsante Invia -->
+            <div class="form-group text-center">
+              <button type="submit" class="btn btn-primary btn-lg">Invia Messaggio</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Breadcrumbs -->
+<nav aria-label="Breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+      <li class="breadcrumb-item"><a href="contact.html">Contattaci</a></li>
+    </ol>
+  </nav>
+
+  <footer class="bg-dark text-white text-center p-3 mt-5">
+    <p>© 2025 Progetto Informatica Umanistica</p>
+  </footer>
+
+</body>
+</html>
+
+
+
+

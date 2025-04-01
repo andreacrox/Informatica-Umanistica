@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catalogo opere principali</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+   <!-- Dublin Core Metadata -->
+   <meta name="DC.Title" content="Catalogo delle Opere di Paul Gauguin">
+   <meta name="DC.Creator" content="Andrea Croci">
+   <meta name="DC.Subject" content="Arte Moderna, Post-impressionismo, Simbolismo">
+   <meta name="DC.Description" content="Una collezione delle opere più famose di Paul Gauguin, con immagini e descrizioni dettagliate.">
+   <meta name="DC.Publisher" content="Archivio Online Paul Gauguin">
+   <meta name="DC.Date" content="2025">
+   <meta name="DC.Type" content="Catalogo Digitale">
+   <meta name="DC.Format" content="HTML, Immagini, Testo">
+   <meta name="DC.Language" content="it">
+
+
+   <!-- Leaflet CSS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+<!-- Include il CSS di Bootstrap -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Include il JS di Bootstrap (necessario per la funzionalità del carosello) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+</head>
+<body>
+
+  <div class="catalog">
+
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark custom-header">
+        <a class="navbar-brand" href="index.html">Homepage</a>
+        <div class="navbar-nav ml-auto"> <!-- Aggiungi ml-auto qui -->
+          <a class="nav-link" href="catalog.html">Catalogo Opere</a>
+          <a class="nav-link" href="webproject.html">Progetto Web</a>
+          <a class="nav-link" href="contact.html">Contattaci</a>
+        </div>
+      </nav>
+    </header>
+    
+
+
+  
+ <h1 class="titolo">Opere più importanti di Paul Gaugin</h1>
+
+  <div id="carouselExample" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <!-- Primo elemento del carosello -->
+      <div class="carousel-item active">
+        <img src="assets/opera1.jpg" class="d-block w-100" alt="Immagine 1">
+        <div class="carousel-caption-custom">
+          <h5>Titolo: La Senna presso il ponte di Jena</h5>
+          <a href="opera1.html" target="_blank" class="btn btn-primary">Vai all'opera</a>
+        </div>
+      </div>
+      <!-- Secondo elemento del carosello -->
+      <div class="carousel-item">
+        <img src="assets/opera2.jpg" class="d-block w-100" alt="Immagine 2">
+        <div class="carousel-caption-custom">
+          <h5>Titolo: Nudo di donna che cuce</h5>
+          <a href="opera2.html" target="_blank" class="btn btn-primary">Vai all'opera</a>
+        </div>
+      </div>
+      <!-- Terzo elemento del carosello -->
+      <div class="carousel-item">
+        <img src="assets/opera3.jpg" class="d-block w-100" alt="Immagine 3">
+        <div class="carousel-caption-custom">
+          <h5>Titolo: Sala in casa dell’artista</h5>
+          <a href="opera3.html" target="_blank" class="btn btn-primary">Vai all'opera</a>
+        </div>
+      </div>
+      <!-- Quarto elemento del carosello -->
+      <div class="carousel-item">
+        <img src="assets/opera4.jpg" class="d-block w-100" alt="Immagine 4">
+        <div class="carousel-caption-custom">
+          <h5>Titolo: Da dove veniamo? Chi siamo? Dove andiamo?</h5>
+          <a href="opera4.html" target="_blank" class="btn btn-primary">Vai all'opera</a>
+        </div>
+      </div>
+      <!-- Quinto elemento del carosello -->
+      <div class="carousel-item">
+        <img src="assets/opera5.jpg" class="d-block w-100" alt="Immagine 5">
+        <div class="carousel-caption-custom">
+          <h5>Titolo: Il Cristo giallo</h5>
+          <a href="opera5.html" target="_blank" class="btn btn-primary">Vai all'opera</a>
+        </div>
+      </div>
+      <!-- Sesto elemento del carosello -->
+      <div class="carousel-item">
+        <img src="assets/opera6.jpg" class="d-block w-100" alt="Immagine 6">
+        <div class="carousel-caption-custom">
+          <h5>Titolo: Visione dopo il sermone</h5>
+          <a href="opera6.html" target="_blank" class="btn btn-primary">Vai all'opera</a>
+        </div>
+      </div>
+      <!-- Settimo elemento del carosello -->
+      <div class="carousel-item">
+        <img src="assets/opera7.jpg" class="d-block w-100" alt="Immagine 7">
+        <div class="carousel-caption-custom">
+          <h5>Titolo: Donne di Tahiti</h5>
+          <a href="opera7.html" target="_blank" class="btn btn-primary">Vai all'opera</a>
+        </div>
+      </div>
+      <!-- Ottavo elemento del carosello -->
+      <div class="carousel-item">
+        <img src="assets/opera8.jpg" class="d-block w-100" alt="Immagine 8">
+        <div class="carousel-caption-custom">
+          <h5>Titolo: La Orana Maria</h5>
+          <a href="opera8.html" target="_blank" class="btn btn-primary">Vai all'opera</a>
+        </div>
+      </div>
+      <!-- Nono elemento del carosello -->
+      <div class="carousel-item">
+        <img src="assets/opera9.jpg" class="d-block w-100" alt="Immagine 9">
+        <div class="carousel-caption-custom">
+          <h5>Titolo: Parau Api</h5>
+          <a href="opera9.html" target="_blank" class="btn btn-primary">Vai all'opera</a>
+        </div>
+      </div>
+      <!-- Decimo elemento del carosello -->
+      <div class="carousel-item">
+        <img src="assets/opera10.jpg" class="d-block w-100" alt="Immagine 10">
+        <div class="carousel-caption-custom">
+          <h5>Titolo: Il cavallo bianco</h5>
+          <a href="opera10.html" target="_blank" class="btn btn-primary">Vai all'opera</a>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Controlli per il carosello -->
+    <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Precedente</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExample" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Successivo</span>
+    </a>
+  </div>
+
+
+  <!-- Paginazione -->
+<div class="pagination-container text-center my-4">
+  <ul class="pagination justify-content-center">
+    <li class="page-item"><a class="page-link" href="opera1.html" target="_blank">1</a></li>
+    <li class="page-item"><a class="page-link" href="opera2.html" target="_blank">2</a></li>
+    <li class="page-item"><a class="page-link" href="opera3.html" target="_blank">3</a></li>
+    <li class="page-item"><a class="page-link" href="opera4.html" target="_blank">4</a></li>
+    <li class="page-item"><a class="page-link" href="opera5.html" target="_blank">5</a></li>
+    <li class="page-item"><a class="page-link" href="opera6.html" target="_blank">6</a></li>
+    <li class="page-item"><a class="page-link" href="opera7.html" target="_blank">7</a></li>
+    <li class="page-item"><a class="page-link" href="opera8.html" target="_blank">8</a></li>
+    <li class="page-item"><a class="page-link" href="opera9.html" target="_blank">9</a></li>
+    <li class="page-item"><a class="page-link" href="opera10.html" target="_blank">10</a></li>
+  </ul>
+</div>
+
+
+<h2 class="mappaOpereTitolo"> Mappa delle Opere </h2>
+
+
+
+<!-- Barra di ricerca -->
+<div class="search-container">
+  <input type="text" id="searchInput" placeholder="Inserisci il titolo di un'opera..." onkeyup="filterArtworks()">
+</div>
+
+<!-- Mappa -->
+<div id="map" style="height: 500px;"></div>
+
+<script>
+// Array delle opere
+var locations = [
+  { title: 'La Senna presso il ponte di Jena', lat: 48.861992, lon: 2.291412, description: 'Museo d\'Orsay, Parigi, Francia' },
+  { title: 'Nudo di donna che cuce', lat: 55.6761, lon: 12.5683, description: 'Ny Carlsberg Glyptotek, Copenaghen, Danimarca' },
+  { title: 'Sala in casa dell’artista', lat: 59.9139, lon: 10.7437, description: 'Nasjonalgalleriet, Oslo, Norvegia' },
+  { title: 'Da dove veniamo? Chi siamo? Dove andiamo?', lat: 42.3601, lon: -71.0589, description: 'Museum of Fine Arts, Boston, Stati Uniti' },
+  { title: 'Il Cristo giallo', lat: 48.861992, lon: 2.291412, description: 'Musée d\'Orsay, Parigi, Francia' },
+  { title: 'Visione dopo il sermone', lat: 55.9475, lon: -3.2002, description: 'National Gallery of Scotland, Edimburgo, Scozia' },
+  { title: 'Donne di Tahiti', lat: 42.3601, lon: -71.0589, description: 'Museum of Fine Arts, Boston, Stati Uniti' },
+  { title: 'La Orana Maria', lat: 48.861992, lon: 2.291412, description: 'Musée d\'Orsay, Parigi, Francia' },
+  { title: 'Parau Api', lat: 41.8796, lon: -87.6248, description: 'Art Institute of Chicago, Chicago, Stati Uniti' },
+  { title: 'Il cavallo bianco', lat: 48.861992, lon: 2.291412, description: 'Musée d\'Orsay, Parigi, Francia' }
+];
+
+// Crea una mappa centrata sulle coordinate di Parigi
+var map = L.map('map').setView([48.8566, 2.3522], 2);
+
+// Aggiungi il layer della mappa (OpenStreetMap)
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
+
+// Funzione per filtrare le opere in base al titolo
+function filterArtworks() {
+  var input = document.getElementById('searchInput');  // Ottieni il valore dell'input
+  var filter = input.value.toLowerCase();  // Converte l'input in minuscolo
+  var filteredLocations = locations.filter(function(location) {
+    return location.title.toLowerCase().includes(filter);  // Confronta il titolo con l'input
+  });
+
+  // Rimuovi i marker esistenti dalla mappa
+  map.eachLayer(function(layer) {
+    if (layer instanceof L.Marker) {
+      map.removeLayer(layer);
+    }
+  });
+
+  // Aggiungi i nuovi marker in base al filtro
+  filteredLocations.forEach(function(location) {
+    L.marker([location.lat, location.lon])
+      .addTo(map)
+      .bindPopup('<b>' + location.title + '</b><br>' + location.description);
+  });
+}
+</script>
+
+
+
+
+<div id="map" style="height: 600px;"></div>
+
+<script>
+  // Crea una mappa centrata sulle coordinate di Parigi
+  var map = L.map('map').setView([48.8566, 2.3522], 2); // Coordinate centrali (Parigi)
+
+  // Aggiungi il layer della mappa (OpenStreetMap)
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+  }).addTo(map);
+
+  // Creazione dei marker per le opere
+  var locations = [
+    { title: 'La Senna presso il ponte di Jena', lat: 48.861992, lon: 2.291412, description: 'Museo d\'Orsay, Parigi, Francia' },
+    { title: 'Nudo di donna che cuce', lat: 55.6761, lon: 12.5683, description: 'Ny Carlsberg Glyptotek, Copenaghen, Danimarca' },
+    { title: 'Sala in casa dell’artista', lat: 59.9139, lon: 10.7437, description: 'Nasjonalgalleriet, Oslo, Norvegia' },
+    { title: 'Da dove veniamo? Chi siamo? Dove andiamo?', lat: 42.3601, lon: -71.0589, description: 'Museum of Fine Arts, Boston, Stati Uniti' },
+    { title: 'Il Cristo giallo', lat: 48.861992, lon: 2.291412, description: 'Musée d\'Orsay, Parigi, Francia' },
+    { title: 'Visione dopo il sermone', lat: 55.9475, lon: -3.2002, description: 'National Gallery of Scotland, Edimburgo, Scozia' },
+    { title: 'Donne di Tahiti', lat: 42.3601, lon: -71.0589, description: 'Museum of Fine Arts, Boston, Stati Uniti' },
+    { title: 'La Orana Maria', lat: 48.861992, lon: 2.291412, description: 'Musée d\'Orsay, Parigi, Francia' },
+    { title: 'Parau Api', lat: 41.8796, lon: -87.6248, description: 'Art Institute of Chicago, Chicago, Stati Uniti' },
+    { title: 'Il cavallo bianco', lat: 48.861992, lon: 2.291412, description: 'Musée d\'Orsay, Parigi, Francia' }
+  ];
+
+  // Aggiungi i marker per ogni opera
+  locations.forEach(function(location, index) {
+    // Aggiungi un piccolo offset per separare i marker se si trovano troppo vicini
+    var offset = (index % 2 === 0) ? 0.0001 : -0.0001;  // Alterna l'offset per ogni opera
+    var lat = location.lat + offset;
+    var lon = location.lon + offset;
+    
+    L.marker([lat, lon])
+      .addTo(map)
+      .bindPopup('<b>' + location.title + '</b><br>' + location.description);
+  });
+</script>
+
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</div>
+
+
+
+
+
+
+
+
+
+<!-- Breadcrumbs -->
+<nav aria-label="Breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+    <li class="breadcrumb-item"><a href="catalog.html">Catalogo Opere</a></li>
+  </ol>
+</nav>
+
+<footer class="bg-dark text-white text-center p-3 mt-5">
+  <p>© 2025 Progetto Informatica Umanistica</p>
+</footer>
+
+
+</body>
+</html>

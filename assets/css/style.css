@@ -1,0 +1,428 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Georgia', serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #E0F2E9;
+  }
+  
+  .custom-header {
+    background-color: rgb(29, 29, 31); /* Sfondo nero */
+    color: white; /* Testo bianco */
+    padding: 10px 20px; /* Margini per rendere l'header più stretto */
+  }
+  
+  .custom-header .nav-link {
+    color: white; /* Scritte dei link bianche */
+  }
+  
+  .custom-header .nav-link:hover {
+    color: gray; /* Cambia il colore al passaggio del mouse */
+  }
+  
+  .custom-header .navbar-brand {
+    color: white; /* Colore del brand */
+  }
+  
+  .custom-header .navbar-brand:hover {
+    color: gray; /* Cambia colore al passaggio del mouse */
+  }
+  
+
+  .navbar, .introduction h1 {
+    font-family: 'Arial', sans-serif; /* Usato per titoli */
+  }
+  
+  .navbar {
+    width:100%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+
+  }
+  
+  .navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #444;
+    text-decoration: none;
+  }
+  
+  .navbar-nav {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .nav-link {
+    color: black;
+    text-decoration: none;
+    font-size: 1rem;
+  }
+  
+  .nav-link:hover {
+    color: #000;
+    text-decoration: underline;
+  }
+
+  .introduction h1:hover, .style-section h2:hover {
+    transform: scale(1.05);
+  }
+  
+  .introduction {
+    position: relative;
+    padding: 40px;
+    color: #fff;
+    background-image: url('../PAULGA1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  .introduction::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 250, 240, 0.4); /* Overlay chiaro e semi-trasparente */
+    z-index: 1; /* L'overlay si posiziona sotto il testo */
+  }
+  
+  .introduction h1, 
+  .introduction p {
+    position: relative;
+    z-index: 2; /* Testo sopra l'overlay */
+    color: black; /* Colore del testo (nero) per contrasto */
+  }
+
+  .introduction h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    text-align: center; /* Puoi centrare il titolo se lo desideri */
+  }
+  
+  .introduction p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .style-section {
+    background-color: #E0F2E9;
+    padding: 40px 20px;
+    margin: 40px 0;
+    border-radius: 10px; /* Angoli arrotondati per un aspetto più morbido */
+    text-align: center; /* Centra il contenuto */
+  }
+  
+  .style-section h2 {
+    font-size: 2.5rem; /* Dimensione grande per il titolo */
+    font-weight: bold;
+    color: #333; /* Colore scuro per il titolo */
+    margin-bottom: 20px;
+  }
+  
+  .style-section p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #555; /* Colore del testo grigio scuro per una buona leggibilità */
+    max-width: 800px; /* Limita la larghezza per la leggibilità */
+    margin: 0 auto; /* Centra il testo */
+  }
+  
+  
+  .artworks-gallery {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .artworks-gallery img {
+    width: 200px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+  }
+  
+  .artworks-gallery img:hover {
+    transform: scale(1.05);
+  }
+  
+  footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 25px;
+    font-size: 1rem;
+    margin-top: 40px;
+    box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  
+
+
+
+
+
+  .timeline-horizontal {
+    padding: 40px 0;
+    text-align: center;
+    background-color: #f9f9f9;
+  }
+  
+  .timeline-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    position: relative;
+  }
+  
+  .timeline-item {
+    position: relative;
+    width: 15%;
+  }
+  
+  .timeline-badge {
+    display: inline-block;
+    background-color: #6c757d;
+    color: white;
+    padding: 10px;
+    border-radius: 50%;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  .timeline-content {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 6px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+  }
+  
+  .timeline-container::after {
+    content: '';
+    position: absolute;
+    top: 30px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #6c757d;
+    z-index: -1;
+  }
+  
+.mappaOpereTitolo{
+text-align:center;
+margin-top:10px;
+margin-bottom:20px;
+}
+
+#map{
+ width:80%;
+ margin: 0 auto;
+}
+
+  #carouselExample .carousel-item img{
+    max-height: 400px; /* Altezza fissa, ad esempio 300px */
+    object-fit: contain;
+    }
+  
+    #carouselExample{
+        width: 50%;
+        margin: 0 auto;
+    }
+  
+    .carousel-caption-custom {
+        text-align: center; /* Centrare il testo */
+        margin-top: 10px; /* Distanza tra l'immagine e la didascalia */
+        color: black; /* Colore del testo nero */
+      }
+      
+      .carousel-caption-custom h5 {
+        font-size: 18px;
+        margin-bottom: 5px; /* Distanza tra il titolo e la descrizione */
+      }
+      
+      .carousel-caption-custom p {
+        font-size: 14px;
+      }
+      
+      .titolo{
+        text-align: center;
+        margin-bottom: 30px;
+      }
+  
+      .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    background-color: black !important; /* Imposta il colore delle frecce su nero */
+    border-radius: 50%; /* Mantieni la forma rotonda */
+  }
+  
+  .catalog{
+  background-color:#E0F2E9;
+  }
+  
+  html{
+    background-color:#E0F2E9;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /* Rende più evidenti gli eventi della timeline quando ci si passa sopra con il mouse */
+.timeline-item {
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Per rendere l'effetto fluido */
+}
+
+.timeline-item:hover {
+  transform: scale(1.05); /* Aumenta leggermente le dimensioni dell'elemento */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Aggiunge un'ombra per far risaltare l'elemento */
+}
+
+.timeline-content h4 {
+  transition: color 0.3s ease, text-shadow 0.3s ease; /* Per rendere l'effetto del testo fluido */
+}
+
+.timeline-item:hover .timeline-content h4 {
+  color: #d9534f; /* Cambia il colore del testo quando si passa sopra */
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.5); /* Aggiunge un'ombra al testo per evidenziarlo */
+}
+
+
+
+.search-container {
+  text-align: center;
+  margin: 20px 0;
+}
+
+#searchInput {
+  padding: 10px;
+  font-size: 1rem;
+  width: 80%;
+  max-width: 400px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+
+
+
+
+
+
+
+
+.breadcrumb {
+  background-color: #f8f9fa; /* Colore di sfondo chiaro */
+  padding: 12px 20px; /* Spaziatura interna per maggiore respiro */
+  border-radius: 8px; /* Angoli arrotondati */
+  margin-top: 20px; /* Aggiunge uno spazio sopra per distanziarlo dal contenuto */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Leggera ombra per un effetto di profondità */
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+  content: "›"; /* Separatore tra i breadcrumb */
+  color: #6c757d; /* Colore separatore */
+  font-size: 18px; /* Rende il separatore più grande */
+}
+
+.breadcrumb-item a {
+  color: #007bff; /* Colore del link */
+  text-decoration: none; /* Rimuove la sottolineatura */
+  font-weight: 600; /* Testo più evidente per i link */
+}
+
+.breadcrumb-item a:hover {
+  text-decoration: underline; /* Sottolinea il link al passaggio del mouse */
+  color: #0056b3; /* Colore più scuro per il link al passaggio del mouse */
+}
+
+.breadcrumb-item.active {
+  color: #6c757d; /* Colore per l'elemento attivo (senza link) */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Stile per la paginazione */
+.pagination-container {
+  margin-top: 30px;  /* Distanza sopra la paginazione */
+  margin-bottom: 30px;  /* Distanza sotto la paginazione */
+}
+
+.pagination {
+  display: inline-block;
+  background-color: transparent;
+  border-radius: 50px;  /* Angoli arrotondati */
+}
+
+.page-item {
+  margin: 0 5px;
+}
+
+.page-link {
+  padding: 10px 15px;
+  border-radius: 50px;
+  background-color: #007bff;  /* Colore di sfondo */
+  color: white;  /* Colore del testo */
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;  /* Transizione dolce per il cambio di colore */
+}
+
+.page-link:hover {
+  background-color: #0056b3;  /* Colore quando si passa sopra */
+  color: #ffffff;  /* Colore del testo quando hover */
+  transform: scale(1.1);  /* Effetto di ingrandimento al passaggio del mouse */
+}
+
+.page-item.active .page-link {
+  background-color: #28a745;  /* Colore per la pagina attiva */
+  color: white;
+  border: none;  /* Rimuovi il bordo */
+}
+
+.page-link:focus {
+  outline: none;  /* Rimuovi il bordo blu quando si clicca */
+}

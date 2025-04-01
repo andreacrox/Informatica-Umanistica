@@ -1,0 +1,130 @@
+CREATE DATABASE bostarter;
+USE bostarter;
+-- Tabella per gli utenti
+CREATE TABLE utenti (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(255) UNIQUE NOT NULL,
+    nickname VARCHAR(50) UNIQUE NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    nome VARCHAR(100),
+    cognome VARCHAR(100),
+    anno_nascita YEAR,
+    luogo_nascita VARCHAR(100),
+    tipo ENUM('amministratore', 'creatore', 'normale') DEFAULT 'normale',
+    codice_sicurezza VARCHAR(255),
+    nr_progetti INT DEFAULT 0,
+    affidabilita DECIMAL(5,2) DEFAULT 0.00
+);
+
+-- Tabella per le skill
+CREATE TABLE competenze (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    competenza VARCHAR(100) NOT NULL,
+    livello INT CHECK (livello BETWEEN 0 AND 5)
+);
+
+-- Tabella per associare le skill agli utenti
+CREATE TABLE utenti_competenze (
+    id_utente INT,
+    id_competenze INT,
+    livello INT CHECK (livello BETWEEN 0 AND 5),
+    FOREIGN KEY (id_utente) REFERENCES utenti(id),
+    FOREIGN KEY (id_competenze) REFERENCES competenze(id),
+    PRIMARY KEY (id_utente, id_competenze)
+);
+
+-- Tabella per i progetti
+CREATE TABLE progetti (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(255) UNIQUE NOT NULL,
+    descrizione TEXT,
+    data_inserimento DATETIME DEFAULT CURRENT_TIMESTAMP,
+    budget DECIMAL(10,2) NOT NULL,
+    data_limite DATE NOT NULL,
+    stato ENUM('aperto', 'chiuso') DEFAULT 'aperto',
+    id_creatore INT,
+    tipo ENUM('hardware', 'software') NOT NULL,
+    FOREIGN KEY (id_creatore) REFERENCES utenti(id)
+);
+
+-- Tabella per le reward
+CREATE TABLE reward (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    descrizione TEXT NOT NULL,
+    foto VARCHAR(255),
+    id_progetto INT,
+    FOREIGN KEY (id_progetto) REFERENCES progetti(id)
+);
+
+-- Tabella per i componenti dei progetti hardware
+CREATE TABLE componenti (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(255) NOT NULL,
+    descrizione TEXT,
+    prezzo DECIMAL(10,2),
+    quantita INT CHECK (quantita > 0),
+    id_progetto INT,
+    FOREIGN KEY (id_progetto) REFERENCES progetti(id)
+);
+
+-- Tabella per i profili richiesti nei progetti software
+CREATE TABLE profili (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(255) NOT NULL,
+    id_progetto INT,
+    FOREIGN KEY (id_progetto) REFERENCES progetti(id)
+);
+
+-- Tabella per le skill richieste nei profili
+CREATE TABLE profili_skill (
+    id_profilo INT,
+    id_competenze INT,
+    livello INT CHECK (livello BETWEEN 0 AND 5),
+    FOREIGN KEY (id_profilo) REFERENCES profili(id),
+    FOREIGN KEY (id_competenze) REFERENCES competenze(id),
+    PRIMARY KEY (id_profilo, id_competenze)
+);
+
+-- Tabella per i finanziamenti ai progetti
+CREATE TABLE finanziamenti (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    importo DECIMAL(10,2) NOT NULL,
+    data DATE NOT NULL,
+    id_utente INT,
+    id_progetto INT,
+    id_reward INT,
+    FOREIGN KEY (id_utente) REFERENCES utenti(id),
+    FOREIGN KEY (id_progetto) REFERENCES progetti(id),
+    FOREIGN KEY (id_reward) REFERENCES reward(id)
+);
+
+-- Tabella per i commenti sui progetti
+CREATE TABLE commenti (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    testo TEXT NOT NULL,
+    data DATETIME DEFAULT CURRENT_TIMESTAMP,
+    id_utente INT,
+    id_progetto INT,
+    FOREIGN KEY (id_utente) REFERENCES utenti(id),
+    FOREIGN KEY (id_progetto) REFERENCES progetti(id)
+);
+
+-- Tabella per le risposte ai commenti
+CREATE TABLE risposte (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    testo TEXT NOT NULL,
+    data DATETIME DEFAULT CURRENT_TIMESTAMP,
+    id_commento INT,
+    id_utente INT,
+    FOREIGN KEY (id_commento) REFERENCES commenti(id),
+    FOREIGN KEY (id_utente) REFERENCES utenti(id)
+);
+
+-- Tabella per le candidature ai progetti software
+CREATE TABLE candidature (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    id_utente INT,
+    id_profilo INT,
+    FOREIGN KEY (id_utente) REFERENCES utenti(id),
+    FOREIGN KEY (id_profilo) REFERENCES profili(id)
+);
