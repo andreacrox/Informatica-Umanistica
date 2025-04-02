@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz su Paul Gauguin</title>
+  <!-- Bootstrap CSS per lo stile -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark custom-header">
+      <a class="navbar-brand" href="index.html">Homepage</a>
+      <div class="navbar-nav ml-auto"> <!-- Aggiungi ml-auto qui -->
+        <a class="nav-link" href="catalog.html">Catalogo Opere</a>
+        <a class="nav-link" href="progetto.html">Web Project Plan</a>
+        <a class="nav-link" href="contact.html">Contattaci</a>
+        <a class="nav-link" href="quiz.html">Quiz</a>
+      </div>
+    </nav>
+  </header>
+<body>
+
+  <div class="container mt-5">
+    <h1 class="text-center">Quiz su Paul Gauguin</h1>
+    <div id="quiz-container" class="quiz-container">
+      <!-- Domande verranno caricate qui -->
+    </div>
+    <button id="next-btn" class="btn btn-primary btn-block">Domanda Successiva</button>
+    <div id="result" class="result text-center"></div>
+  </div>
+
+  <!-- Bootstrap JS e jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.0/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    const quizData = [
+      { question: "In quale anno è nato Paul Gauguin?", options: ["1848", "1850", "1852", "1854"], answer: 2 },
+      { question: "Quale movimento artistico è associato a Gauguin?", options: ["Impressionismo", "Post-impressionismo", "Cubismo", "Surrealismo"], answer: 1 },
+      { question: "In quale paese Gauguin visse gran parte della sua vita?", options: ["Francia", "Polinesia", "Stati Uniti", "Italia"], answer: 1 },
+      { question: "Qual è una delle opere più famose di Gauguin?", options: ["La Senna presso il ponte di Jena", "Visione dopo il sermone", "La Gioconda", "Guernica"], answer: 1 },
+      { question: "Gauguin era inizialmente un...", options: ["Pittore", "Scultore", "Compositore", "Banchiere"], answer: 0 },
+      { question: "Qual è il tema principale delle opere di Gauguin?", options: ["Paesaggi urbani", "Ritratti", "Natura morta", "Scenari esotici e mitologici"], answer: 3 },
+      { question: "Dove Gauguin ha trascorso gli ultimi anni della sua vita?", options: ["Tahiti", "Parigi", "New York", "Brittany"], answer: 0 },
+      { question: "Quale tecnica usava spesso Gauguin nelle sue opere?", options: ["Acquerello", "Olio su tela", "Sculpture", "Freschi"], answer: 1 },
+      { question: "In quale decennio Gauguin si trasferì a Tahiti?", options: ["1880", "1890", "1900", "1910"], answer: 1 },
+      { question: "Quando Paul Gauguin morì?", options: ["1903", "1899", "1910", "1925"], answer: 0 }
+    ];
+
+    // Mescola le risposte di ogni domanda
+    function shuffle(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+    }
+
+    // Funzione per generare una singola domanda
+    function loadQuestion(questionIndex) {
+      const questionData = quizData[questionIndex];
+      const quizContainer = document.getElementById('quiz-container');
+      
+      shuffle(questionData.options); // Mescoliamo le opzioni di risposta
+
+      quizContainer.innerHTML = `
+        <div class="form-group">
+          <label>${questionData.question}</label>
+          <div>
+            ${questionData.options.map((option, index) => `
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="question${questionIndex}" value="${index}">
+                <label class="form-check-label">${option}</label>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      `;
+      document.getElementById('next-btn').style.display = 'block';
+    }
+
+    let currentQuestionIndex = 0;
+    let userAnswers = [];
+
+    // Mostra la domanda successiva
+    document.getElementById('next-btn').addEventListener('click', () => {
+      const selectedOption = document.querySelector(`input[name="question${currentQuestionIndex}"]:checked`);
+      
+      if (selectedOption) {
+        userAnswers[currentQuestionIndex] = parseInt(selectedOption.value);
+        currentQuestionIndex++;
+        
+        if (currentQuestionIndex < quizData.length) {
+          loadQuestion(currentQuestionIndex);
+        } else {
+          showResult();
+        }
+      } else {
+        alert("Per favore seleziona una risposta!");
+      }
+    });
+
+    // Mostra il risultato finale
+    function showResult() {
+      let score = 0;
+      quizData.forEach((item, index) => {
+        if (userAnswers[index] === item.answer) {
+          score++;
+        }
+      });
+      document.getElementById('result').innerHTML = `Hai risposto correttamente a ${score} su ${quizData.length} domande!`;
+      document.getElementById('next-btn').style.display = 'none';
+    }
+
+    // Inizializza il quiz
+    loadQuestion(currentQuestionIndex);
+  </script>
+</body>
+</html>

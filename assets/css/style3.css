@@ -2,7 +2,7 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    
 }
 
 /* Corpo principale del sito */
@@ -13,6 +13,7 @@ body {
     color: #333;
     padding: 20px;
     padding-top:0px;
+    box-sizing: border-box;
 }
 
 /* Navbar */
@@ -24,6 +25,7 @@ body {
     justify-content: space-between; /* Distribuisce i contenuti a sinistra e destra */
     background-color: #000; /* Imposta il colore di sfondo della navbar su nero */
     padding: 10px 20px;
+    margin-left: 0;
 }
 
 .navbar-brand {
